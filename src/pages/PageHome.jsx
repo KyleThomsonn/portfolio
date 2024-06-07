@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
-import seenemaMockup from '../seenema-mockup.png'
 
 function PageHome() {
     const restPath = restBase + 'pages/9';
