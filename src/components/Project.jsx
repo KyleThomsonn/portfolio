@@ -24,11 +24,10 @@ function Project({ project }) {
     }, [project]);
   
     return (
-      <div>
-        <h2>{project.acf.project_title}</h2>
-        <p>{project.acf.project_description}</p>
+      <article className='project-card'>
         {image && <img src={image.source_url} alt={image.alt_text} />}
-      </div>
+        <h2>{project.acf.project_title}</h2>
+      </article>
     );
   }
 
