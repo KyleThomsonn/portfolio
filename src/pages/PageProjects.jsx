@@ -1,28 +1,33 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
-import Project from '../components/Project';
+import Projects from '../components/Projects';
 
 function PageProjects() {
-  const restPath = restBase + 'projects';
+  const restPathPosts = restBase + 'projects?acf_format=standard';
+  const restPathPage = restBase + 'pages/86';
 
-  const [restData, setData] = useState([]);
+  const [restDataPosts, setDataPosts] = useState([]);
+  const [restDataPage, setDataPage] = useState([])
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(restPath);
-        if (!response.ok) {
+        const response_posts = await fetch(restPathPosts);
+        const response_page = await fetch(restPathPage)
+        if (!response_posts.ok && !response_page.ok) {
           throw new Error('Failed to fetch data');
         }
-        const data = await response.json();
-        setData(data);
+        const restDataPosts = await response_posts.json();
+        const restDataPage = await response_page.json()
+        setDataPosts(restDataPosts);
+        setDataPage(restDataPage)
       } catch (error) {
         setError(error);
       }
     }
     fetchData()
-    }, [restPath]);
+    }, [restPathPosts, restPathPage]);
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -30,8 +35,9 @@ function PageProjects() {
 
   return (
     <>
-    {restData.map((project, id) => (
-      <Project key={id} project={project} />
+      <h1>{ restDataPage.acf && restDataPage.acf.page_title}</h1>
+    {restDataPosts.map((project, id) => (
+      <Projects key={id} project={project} />
     ))}
   </>
 );

@@ -2,46 +2,28 @@ import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 
 function PageAbout() {
-  const restPath = restBase + 'pages/12';
+  const restPathPage = restBase + 'pages/12?acf_format=standard';
 
-  const [restData, setData] = useState([]);
+  const [restDataPage, setDataPage] = useState([]);
   const [error, setError] = useState(null);
-  const [image, setImage] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(restPath);
-        if (!response.ok) {
+        const response_page = await fetch(restPathPage);
+        if (!response_page.ok) {
           throw new Error('Failed to fetch data');
         }
-        const data = await response.json();
-        setData(data);
+        const restDataPage = await response_page.json();
+        setDataPage(restDataPage);
       } catch (error) {
         setError(error);
       }
     }
     fetchData()
-}, [restPath]);
+}, [restPathPage]);
 
-  useEffect(() => {
-    const fetchImage = async () => {
-      try {
-        const response = await fetch(restData._links['wp:attachment'][0].href);
-        if (!response.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        const data = await response.json();
-        setImage(data[0]);
-      } catch (error) {
-        setError(error);
-      }
-    };
-    if (restData._links && restData._links['wp:attachment']) {
-      fetchImage();
-    }
 
-  }, [restData])
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -49,36 +31,36 @@ function PageAbout() {
 
     return (
       <>
-      {restData.acf &&  (
+      {restDataPage.acf &&  (
         <div>
           <section>
-          {image && <img className='portrait' src={image.source_url} alt={image.alt_text} />}
+          <img className='portrait' src={restDataPage.acf.self_image.url} alt={restDataPage.acf.self_image.alt} />
             <article>
-              <h2>{restData.acf.about_title}</h2>
-              <p>{restData.acf.about_me_section}</p>
+              <h2>{restDataPage.acf.about_title}</h2>
+              <p>{restDataPage.acf.about_me_section}</p>
             </article>
 
-            <h3>{restData.acf.hobbies_title}</h3>
+            <h3>{restDataPage.acf.hobbies_title}</h3>
             <ul>
-            {restData.acf.hobbies.map((hobby, index) => (
+            {restDataPage.acf.hobbies.map((hobby, index) => (
           <li key={index}>
             <h3>{hobby.hobby_name}</h3>
           </li>
         ))}
             </ul>
 
-            <h3>{restData.acf.design_skills_title}</h3>
+            <h3>{restDataPage.acf.design_skills_title}</h3>
             <ul>
-              {restData.acf.design_skills_list.map((skill, index) => (
+              {restDataPage.acf.design_skills_list.map((skill, index) => (
                 <li key={index}>
                   {skill}
                 </li>
               ))}
             </ul>
 
-            <h3>{restData.acf.development_skills_title}</h3>
+            <h3>{restDataPage.acf.development_skills_title}</h3>
             <ul>
-              {restData.acf.development_skills_list.map((skill, index) => (
+              {restDataPage.acf.development_skills_list.map((skill, index) => (
                 <li key={index}>
                   {skill}
                 </li>
