@@ -1,0 +1,9 @@
+@use '../base/settings' as *;
+.line{
+    display: block;
+    width: 100%;
+    z-index: 1000;
+    margin: 1rem auto;
+    height: 2px;
+    background-color: $primary-color;
+}

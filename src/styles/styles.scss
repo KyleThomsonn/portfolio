@@ -6,6 +6,9 @@
 // components
 @use 'components/body';
 @use 'components/about';
+@use 'components/page-home';
+@use 'components/nav';
+@use 'components/header';
 
 // google font import
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap")

@@ -1,0 +1,66 @@
+@use '../base/settings' as *;
+.btn-nav, .show-btn-nav{
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 9999;
+    font-size: 1.2rem;
+
+}
+    .btn-nav{
+    color: $primary-color;
+    &:hover, &:active{
+        color: $secondary-color;
+        }
+    }
+
+.show-btn-nav{
+    color: #7A4D9F;
+    &:hover, &:active{
+        color: $secondary-color;
+        }
+}
+
+.nav{
+    visibility: hidden;
+    width: 100%;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transform: translateX(100%);
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-size: 3rem;
+        padding: 0;
+        @media(min-width: 26.5625em){
+            font-size: 4rem;
+        }
+        li {
+            padding: 2rem 1rem;
+            a{
+                color: #7A4D9F;
+
+                &:hover, &:active{
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+
+}
+.show .nav{
+    visibility: visible;
+    transition: visibility 0s, transform 0.3s;
+    transform: translateX(0);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    padding: 1rem;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: $primary-color;
+}

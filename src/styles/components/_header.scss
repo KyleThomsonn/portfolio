@@ -1,0 +1,11 @@
+@use '../base/settings' as *;
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 1rem;
+}

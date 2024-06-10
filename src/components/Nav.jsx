@@ -1,8 +1,13 @@
 import { NavLink } from 'react-router-dom'
 
-function Nav() {
+function Nav( {handleShowHideNav} ) {
+
+  const closeNav = () => {
+    handleShowHideNav();
+  }
+
   return (
-    <nav>
+    <nav className='nav' onClick={closeNav}>
         <ul>
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/projects">Projects</NavLink></li>
