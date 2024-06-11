@@ -38,15 +38,18 @@ function PageHome() {
     
     {restData.acf && (
       <div>
+        <div className='home-content-wrapper'>
         <h2 className='specialty'>{restData.acf.specialty}</h2>
         <span className='line'></span>
+
         <section className='home-intro'>
           <h2>{restData.acf.who_i_am}</h2>
           <p>{restData.acf.what_i_do}</p>
-          <a href={restData.acf.cta_to_about.url}>{restData.acf.cta_to_about.title}</a>
+          <button><a href={restData.acf.cta_to_about.url}>{restData.acf.cta_to_about.title}</a></button>
         </section>
+        </div>
           
-        <section>
+        <section className='home-work-section'>
           <h2>My Work.</h2>
           {restDataProjects.map((project, index) => (
             <img key={index} src={project.acf.project_image.url} alt={project.acf.project_image.alt}></img>

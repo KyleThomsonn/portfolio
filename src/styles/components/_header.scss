@@ -8,4 +8,12 @@ header{
     width: 100%;
     flex-wrap: wrap;
     padding: 1rem;
+
+    h1{
+        max-width: 10rem;
+        @media(min-width: 26.5625em){
+            max-width: 100%;
+        }
+
+    }
 }
