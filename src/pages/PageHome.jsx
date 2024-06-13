@@ -45,7 +45,7 @@ function PageHome() {
         <section className='home-intro'>
           <h2>{restData.acf.who_i_am}</h2>
           <p>{restData.acf.what_i_do}</p>
-          <button><a href={restData.acf.cta_to_about.url}>{restData.acf.cta_to_about.title}</a></button>
+          <a href={restData.acf.cta_to_about.url}>{restData.acf.cta_to_about.title}</a>
         </section>
         </div>
           
@@ -53,7 +53,6 @@ function PageHome() {
           <h2>My Work.</h2>
           {restDataProjects.map((project, index) => (
             <img key={index} src={project.acf.project_image.url} alt={project.acf.project_image.alt}></img>
-
           ))}
         </section>
       </div>

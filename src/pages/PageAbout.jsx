@@ -32,8 +32,7 @@ function PageAbout() {
     return (
       <>
       {restDataPage.acf &&  (
-        <div>
-          <section>
+        <div className='about-wrapper'>
           <img className='portrait' src={restDataPage.acf.self_image.url} alt={restDataPage.acf.self_image.alt} />
             <article>
               <h2>{restDataPage.acf.about_title}</h2>
@@ -49,6 +48,7 @@ function PageAbout() {
         ))}
             </ul>
 
+          <section className='about-skills'>
             <h3>{restDataPage.acf.design_skills_title}</h3>
             <ul>
               {restDataPage.acf.design_skills_list.map((skill, index) => (
@@ -66,7 +66,7 @@ function PageAbout() {
                 </li>
               ))}
             </ul>
-          </section>
+            </section>
         </div>
         )}
       </>
