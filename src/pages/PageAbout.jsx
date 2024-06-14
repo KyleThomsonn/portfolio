@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
-import { restBase } from '../utilities/Utilities'
+import { useState, useEffect } from 'react';
+import { restBase } from '../utilities/Utilities';
+import MyAccordion from '../components/Accordion';
 
 function PageAbout() {
   const restPathPage = restBase + 'pages/12?acf_format=standard';
@@ -34,19 +35,14 @@ function PageAbout() {
       {restDataPage.acf &&  (
         <div className='about-wrapper'>
           <img className='portrait' src={restDataPage.acf.self_image.url} alt={restDataPage.acf.self_image.alt} />
-            <article className='about-intro'>
+            <section className='about-intro'>
               <h2>{restDataPage.acf.about_title}</h2>
               <p>{restDataPage.acf.about_me_section}</p>
-            </article>
+            </section>
 
-            <h3>{restDataPage.acf.hobbies_title}</h3>
-            <ul>
-            {restDataPage.acf.hobbies.map((hobby, index) => (
-          <li key={index}>
-            <h3>{hobby.hobby_name}</h3>
-          </li>
-        ))}
-            </ul>
+            <section className='about-hobbies'> 
+              <MyAccordion title={restDataPage.acf.hobbies_title}   data={restDataPage.acf.hobbies} />
+            </section>
 
           <section className='about-skills'>
             <h3>{restDataPage.acf.design_skills_title}</h3>
