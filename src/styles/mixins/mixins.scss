@@ -1,0 +1,20 @@
+@use '../base/settings' as *;
+
+@mixin customButton() {
+    background-image: linear-gradient(to right, $secondary-color 50%, $primary-color 50%);
+    background-size: 200% 100%;
+    transition: background-position 0.5s ease;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: $background-color;           
+
+    &:hover {
+        background-position: 100% 0;
+    }
+    &:active {
+        background-color: $secondary-color;
+    }
+}

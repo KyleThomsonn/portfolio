@@ -5,7 +5,9 @@
     cursor: pointer;
     z-index: 9999;
     font-size: 1.2rem;
-
+    @media(min-width: 64em){
+        font-size: 1.5rem;
+    }
 }
     .btn-nav{
     color: $primary-color;
@@ -57,7 +59,7 @@
 }
 .show .nav{
     visibility: visible;
-    transition: visibility 0s, transform 0.3s;
+    transition: visibility 0s, transform 0.5s;
     transform: translateX(0);
     height: 100vh;
     width: 100%;

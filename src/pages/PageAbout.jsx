@@ -34,7 +34,7 @@ function PageAbout() {
       {restDataPage.acf &&  (
         <div className='about-wrapper'>
           <img className='portrait' src={restDataPage.acf.self_image.url} alt={restDataPage.acf.self_image.alt} />
-            <article>
+            <article className='about-intro'>
               <h2>{restDataPage.acf.about_title}</h2>
               <p>{restDataPage.acf.about_me_section}</p>
             </article>
@@ -67,6 +67,11 @@ function PageAbout() {
               ))}
             </ul>
             </section>
+            {restDataPage.acf.cta && (
+            <div className='about-projects-btn'>
+              <a href={restDataPage.acf.cta.url}>{restDataPage.acf.cta.title}</a>
+            </div>
+              )}
         </div>
         )}
       </>

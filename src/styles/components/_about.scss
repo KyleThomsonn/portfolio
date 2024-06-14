@@ -1,36 +1,63 @@
 @use '../base/settings' as *;
+@use '../mixins/mixins';
+
 .about-wrapper{
     padding: 1rem;
-.portrait {
     max-width: 400px;
-    display: block;
     margin: 0 auto;
-    padding: 0 0 1rem 0;
-    }
 
-.about-skills{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    ul{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0;
-        li{
-            display: flex;
-            background-color: $secondary-color;
-            color: $background-color;
-            font-weight: bold;
+    .portrait {
+        display: block;
+        margin: 0 auto;
+        padding: 0 0 1rem 0;
+        }
+
+    .about-intro{
+        h2{
             text-align: center;
-            width: 7.5rem;
-            padding: 1rem;
-            margin: .5rem;
-            border-radius: 30px;
-            align-items: center;
-            justify-content: center;
+            padding: .5rem;
+        }
+        p{
+            line-height: 1.5;
+            font-size: 1.1rem;
         }
     }
-}
+
+    .about-skills{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3 {
+            color: $secondary-color;
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0;
+            li{
+                display: flex;
+                background-color: $primary-color;
+                color: $background-color;
+                font-weight: bold;
+                text-align: center;
+                width: 7.5rem;
+                padding: 1rem;
+                margin: .5rem;
+                border-radius: 10px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .about-projects-btn{
+        text-align: center;
+        padding: 1rem;
+        
+        a{
+      @include mixins.customButton();
+      }
+    }
 
 }
