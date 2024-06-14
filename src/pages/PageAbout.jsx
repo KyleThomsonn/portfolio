@@ -34,7 +34,10 @@ function PageAbout() {
       <>
       {restDataPage.acf &&  (
         <div className='about-wrapper'>
+          <div className='img-wrapper'>
           <img className='portrait' src={restDataPage.acf.self_image.url} alt={restDataPage.acf.self_image.alt} />
+          </div>
+          <div className='about-text-wrapper'>
             <section className='about-intro'>
               <h2>{restDataPage.acf.about_title}</h2>
               <p>{restDataPage.acf.about_me_section}</p>
@@ -68,6 +71,7 @@ function PageAbout() {
               <a href={restDataPage.acf.cta.url}>{restDataPage.acf.cta.title}</a>
             </div>
               )}
+        </div>
         </div>
         )}
       </>

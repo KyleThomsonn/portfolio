@@ -17,7 +17,7 @@
     }
 
 .show-btn-nav{
-    color: #7A4D9F;
+    color: #FFFFFF;
     &:hover, &:active{
         color: $secondary-color;
         }
@@ -43,7 +43,7 @@
         li {
             padding: 2rem 1rem;
             a{
-                color: #7A4D9F;
+                color: #FFFFFF;
                 font-weight: 600;
                 @media(min-width: 64em){
                     font-size: 6rem;

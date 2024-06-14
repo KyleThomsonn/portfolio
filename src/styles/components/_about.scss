@@ -3,19 +3,26 @@
 
 .about-wrapper{
     padding: 1rem;
-    max-width: 400px;
     margin: 0 auto;
+
+    @media(min-width: 65em){
+        display: flex;
+        max-width: 81.25rem;
+        justify-content: space-around;
+        gap: 3rem;
+    }
 
     .portrait {
         display: block;
         margin: 0 auto;
-        padding: 0 0 1rem 0;
+        max-width: 400px;
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         }
 
     .about-intro{
         h2{
             text-align: center;
-            padding: .5rem;
+            padding: 1rem .5rem;
         }
         p{
             line-height: 1.5;
