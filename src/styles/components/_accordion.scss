@@ -4,13 +4,37 @@
     padding: 1rem 0;
 
 .hobbies-accordion{
+    cursor: pointer;
     border: 3px solid $primary-color;
     border-radius: 10px;
+    max-width: 31.25rem;
+    margin: 0 auto;
     .accordion-title{
         color: $primary-color;
         font-weight: bold;
         font-size: 2rem;
-        padding: .3rem;
+        padding: .3rem .5rem;
+        display: flex;
+        justify-content: space-between;
+        }
+
+    img{
+        max-width: 250px;
+        height: auto;
+        margin: 0 auto;
+        }
+
+        ul{
+            padding: 0;
+            text-align: center;
+
+            li{
+                border-top: 2px solid $primary-color;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 1rem;
+            }
         }
     }
 }

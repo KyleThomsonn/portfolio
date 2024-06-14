@@ -1,5 +1,7 @@
 @use '../base/settings' as *;
 
 body {
-    background-color: $background-color;
+    background-image: url('../assets/background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

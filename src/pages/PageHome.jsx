@@ -39,11 +39,10 @@ function PageHome() {
     {restData.acf && (
       <div>
         <div className='home-content-wrapper'>
-        <h2 className='specialty'>{restData.acf.specialty}</h2>
-        <span className='line'></span>
 
         <section className='home-intro'>
           <h2>{restData.acf.who_i_am}</h2>
+          <h2 className='specialty'>{restData.acf.specialty}</h2>
           <p>{restData.acf.what_i_do}</p>
           <a href={restData.acf.cta_to_about.url}>{restData.acf.cta_to_about.title}</a>
         </section>

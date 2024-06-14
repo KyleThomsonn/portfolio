@@ -1,5 +1,4 @@
-import Collapse from 'rc-collapse';
-import 'rc-collapse/assets/index.css';
+import { useState } from 'react';
 import {
     Accordion,
     AccordionItem,
@@ -9,18 +8,30 @@ import {
 } from 'react-accessible-accordion';
 
 function MyAccordion({title, data}){
+
+    const [showAccordion, setShowAccordion] = useState(false);
+
+    const toggleAccordion = () => {
+        setShowAccordion(!showAccordion)
+    }
+
     return (
         <Accordion className='hobbies-accordion' allowZeroExpanded={true}>
             <AccordionItem>
                 <AccordionItemHeading>
-                    <AccordionItemButton className='accordion-title'>
+                    <AccordionItemButton className='accordion-title' onMouseDown={toggleAccordion}>
                         {title}
+                        <span>{showAccordion ? '-' : '+'}</span>
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                {data.map((item, index) => (
-                <h3 key={index}>{item.hobby_name}</h3>
-                ))}
+                    <ul className='accordion-item'>
+                    {data.map((item, index) => (
+                        <li key={index}>
+                            <h3 key={index}>{item.hobby_name}</h3>
+                        </li>
+                    ))}
+                    </ul>
                 </AccordionItemPanel>
             </AccordionItem>
         </Accordion>

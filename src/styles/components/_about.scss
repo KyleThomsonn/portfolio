@@ -4,22 +4,28 @@
 .about-wrapper{
     padding: 1rem;
     margin: 0 auto;
+    max-width: 50rem;
 
     @media(min-width: 65em){
         display: flex;
         max-width: 81.25rem;
+        // height: 65rem;
         justify-content: space-around;
+        align-items: center;
         gap: 3rem;
     }
 
-    .portrait {
-        display: block;
-        margin: 0 auto;
+    .img-wrapper{
         max-width: 400px;
-        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        margin: 0 auto;
+        .portrait {
+            display: block;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         }
+    }
 
     .about-intro{
+
         h2{
             text-align: center;
             padding: 1rem .5rem;
