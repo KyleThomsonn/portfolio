@@ -65,15 +65,9 @@
             }
         }
     }
+
+}
+.home-works {
+    text-align: center;
 }
 
-.home-work-section{
-
-    h2{
-        text-align: center;
-        font-size: 2rem;
-        @media(min-width: 64em){
-            font-size: 3rem;
-        }
-    }
-}

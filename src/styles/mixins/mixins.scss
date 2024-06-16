@@ -1,6 +1,6 @@
 @use '../base/settings' as *;
 
-@mixin customButton() {
+@mixin custom-button {
     background-image: linear-gradient(to right, $secondary-color 50%, $primary-color 50%);
     background-size: 200% 100%;
     transition: background-position 0.5s ease;

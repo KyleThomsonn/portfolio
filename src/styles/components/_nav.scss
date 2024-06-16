@@ -60,6 +60,7 @@
 }
 .show .nav{
     visibility: visible;
+    z-index: 9999;
     transition: visibility 0s, transform 0.5s;
     transform: translateX(0);
     height: 100vh;

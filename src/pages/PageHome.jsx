@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { restBase } from '../utilities/Utilities'
+import { restBase } from '../utilities/Utilities';
+import Carousel from '../components/Carousel';
 
 function PageHome() {
     const restPath = restBase + 'pages/9';
@@ -48,12 +49,8 @@ function PageHome() {
         </section>
         </div>
           
-        <section className='home-work-section'>
-          <h2>My Work</h2>
-          {restDataProjects.map((project, index) => (
-            <img key={index} src={project.acf.project_image.url} alt={project.acf.project_image.alt}></img>
-          ))}
-        </section>
+          {restDataProjects && <Carousel data={restDataProjects} />}
+
       </div>
       )}
     </>
