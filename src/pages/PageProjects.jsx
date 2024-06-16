@@ -34,12 +34,12 @@ function PageProjects() {
   }
 
   return (
-    <>
+    <div className='projects-wrapper'>
       <h1>{ restDataPage.acf && restDataPage.acf.page_title}</h1>
     {restDataPosts.map((project, id) => (
       <Projects key={id} project={project} />
     ))}
-  </>
+  </div>
 );
 
 }

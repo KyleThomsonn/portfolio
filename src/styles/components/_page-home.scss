@@ -1,4 +1,5 @@
 @use '../base/settings' as *;
+
 .home-content-wrapper{
     @media(min-width: 64em){
         display: flex;

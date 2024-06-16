@@ -49,7 +49,7 @@ function PageHome() {
         </div>
           
         <section className='home-work-section'>
-          <h2>My Work.</h2>
+          <h2>My Work</h2>
           {restDataProjects.map((project, index) => (
             <img key={index} src={project.acf.project_image.url} alt={project.acf.project_image.alt}></img>
           ))}

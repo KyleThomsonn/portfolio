@@ -9,14 +9,15 @@
     @media(min-width: 65em){
         display: flex;
         max-width: 81.25rem;
+        padding-top: 8rem;
         // height: 65rem;
         justify-content: space-around;
-        align-items: center;
+        // align-items: center;
         gap: 3rem;
     }
 
     .img-wrapper{
-        max-width: 400px;
+        max-width: 25rem;
         margin: 0 auto;
         .portrait {
             display: block;
