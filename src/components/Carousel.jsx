@@ -20,7 +20,7 @@ function Carousel( { data } ) {
       ]
   };
   return (
-    <section className="home-works-section">
+    <section data-aos="fade-up" className="home-works-section">
         <h2 className="home-works-title">My Work</h2>
         <div className="slider-container">
         <Slider {...settings}>

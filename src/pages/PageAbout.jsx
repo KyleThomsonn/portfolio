@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { restBase } from '../utilities/Utilities';
 import MyAccordion from '../components/Accordion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function PageAbout() {
   const restPathPage = restBase + 'pages/12?acf_format=standard';
@@ -24,6 +26,14 @@ function PageAbout() {
     fetchData()
 }, [restPathPage]);
 
+useEffect(() => {
+  AOS.init({
+    duration: 1000,
+    once: true,
+    delay: 100
+  });
+}, []);
+
 
 
   if (error) {
@@ -34,20 +44,20 @@ function PageAbout() {
       <>
       {restDataPage.acf &&  (
         <div className='about-wrapper'>
-          <div className='img-wrapper'>
+          <div data-aos="fade-up" className='img-wrapper'>
           <img className='portrait' src={restDataPage.acf.self_image.url} alt={restDataPage.acf.self_image.alt} />
           </div>
           <div className='about-text-wrapper'>
-            <section className='about-intro'>
+            <section data-aos="fade-up" data-aos-delay="200" className='about-intro'>
               <h2>{restDataPage.acf.about_title}</h2>
               <p>{restDataPage.acf.about_me_section}</p>
             </section>
 
-            <section className='about-hobbies'> 
+            <section data-aos="fade-up" data-aos-delay="300" className='about-hobbies'> 
               <MyAccordion title={restDataPage.acf.hobbies_title}   data={restDataPage.acf.hobbies} />
             </section>
 
-          <section className='about-skills'>
+          <section data-aos="fade-up" data-aos-delay="400" className='about-skills'>
             <h3>{restDataPage.acf.design_skills_title}</h3>
             <ul>
               {restDataPage.acf.design_skills_list.map((skill, index) => (
