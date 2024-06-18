@@ -1,6 +1,7 @@
 @use '../base/settings' as *;
 
 .home-content-wrapper{
+    
     @media(min-width: 64em){
         display: flex;
         align-items: center;
@@ -16,8 +17,6 @@
         align-items: flex-start;
         line-height: 1.5;
         max-width: 37.5rem;
-        @media(min-width: 64em){
-        }
         @media(min-width: 64em){
             max-width: 100%;
         }
@@ -67,7 +66,5 @@
     }
 
 }
-.home-works {
-    text-align: center;
-}
+
 

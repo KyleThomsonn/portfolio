@@ -7,8 +7,8 @@ function Carousel( { data } ) {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 2,
+    slidesToScroll: 1,
     responsive: [
         {
           breakpoint: 700,
@@ -17,26 +17,24 @@ function Carousel( { data } ) {
             slidesToScroll: 1
           }
         },
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
       ]
   };
   return (
-    <>
-        <h2 className="home-works">My Work</h2>
+    <section className="home-works-section">
+        <h2 className="home-works-title">My Work</h2>
         <div className="slider-container">
         <Slider {...settings}>
             {data.map((project, index) => (
-                <img key={index} src={project.acf.project_image.url} alt={project.acf.project_image.alt}></img>
+              <article key={index} className="project-card">
+                <a href="">
+                  <img src={project.acf.project_image.url} alt={project.acf.project_image.alt}></img>
+                  <h3>{project.acf.project_title}</h3>
+                </a>
+              </article>
             ))}
         </Slider>
         </div>
-    </>
+    </section>
   );
 }
 

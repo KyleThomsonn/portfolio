@@ -5,7 +5,6 @@
     cursor: pointer;
     z-index: 9999;
     font-size: 1.2rem;
-    font-weight: bold;
     @media(min-width: 64em){
         font-size: 1.5rem;
     }
@@ -60,7 +59,7 @@
 }
 .show .nav{
     visibility: visible;
-    z-index: 9999;
+    z-index: 9998;
     transition: visibility 0s, transform 0.5s;
     transform: translateX(0);
     height: 100vh;
