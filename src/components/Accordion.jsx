@@ -1,11 +1,4 @@
 import { useState } from 'react';
-import {
-    Accordion,
-    AccordionItem,
-    AccordionItemHeading,
-    AccordionItemButton,
-    AccordionItemPanel,
-} from 'react-accessible-accordion';
 
 function MyAccordion({title, data}){
 
@@ -16,25 +9,22 @@ function MyAccordion({title, data}){
     }
 
     return (
-        <Accordion className='hobbies-accordion' allowZeroExpanded={true}>
-            <AccordionItem>
-                <AccordionItemHeading>
-                    <AccordionItemButton className='accordion-title' onMouseDown={toggleAccordion}>
-                        {title}
-                        <span>{showAccordion ? '-' : '+'}</span>
-                    </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel>
-                    <ul className='accordion-item'>
+
+        <div className={`hobbies-accordion ${showAccordion ? 'open' : ''}`}>
+            <header className='accordion-title' onClick={toggleAccordion}>
+                <h3>{title}</h3>
+                <span>{showAccordion ? '-' : '+'}</span>
+            </header>
+            <div className='accordion-item-panel'>
+                <ul className='accordion-item-panel'>
                     {data.map((item, index) => (
                         <li key={index}>
-                            <h3 key={index}>{item.hobby_name}</h3>
+                            <h3>{item.hobby_name}</h3>
                         </li>
                     ))}
-                    </ul>
-                </AccordionItemPanel>
-            </AccordionItem>
-        </Accordion>
+                </ul>
+            </div>
+        </div>
     );
 }
 

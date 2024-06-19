@@ -1,39 +1,54 @@
 @use '../base/settings' as *;
 
-.about-hobbies{
+.about-hobbies {
     padding: 1rem 0;
 
-.hobbies-accordion{
-    cursor: pointer;
-    border: 3px solid $primary-color;
-    border-radius: 10px;
-    max-width: 31.25rem;
-    margin: 0 auto;
-    .accordion-title{
-        color: $primary-color;
-        font-weight: bold;
-        font-size: 2rem;
-        padding: .3rem .5rem;
-        display: flex;
-        justify-content: space-between;
-        }
-
-    img{
-        max-width: 250px;
-        height: auto;
+    .hobbies-accordion {
+        cursor: pointer;
+        border: 3px solid $primary-color;
+        border-radius: 10px;
+        max-width: 31.25rem;
         margin: 0 auto;
+
+        .accordion-title {
+            color: $primary-color;
+            font-weight: bold;
+            font-size: 2rem;
+            padding: 0.3rem 0.5rem;
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                font-size: 1.5rem;
+            }
         }
 
-        ul{
-            padding: 0;
-            text-align: center;
+        .accordion-item-panel {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-out;
 
-            li{
-                border-top: 2px solid $primary-color;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding: 1rem;
+            ul {
+                padding: 0;
+                text-align: center;
+
+                li {
+                    border-top: 2px solid $primary-color;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 1rem;
+
+                    h3 {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        &.open {
+            .accordion-item-panel {
+                max-height: 31.25rem;
             }
         }
     }
