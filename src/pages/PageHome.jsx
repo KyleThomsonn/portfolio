@@ -4,6 +4,7 @@ import { restBase } from '../utilities/Utilities';
 import Carousel from '../components/Carousel';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import GoDownButton from '../components/GoDownButton';
 
 function PageHome() {
     const restPath = restBase + 'pages/9';
@@ -58,9 +59,10 @@ useEffect(() => {
           <a href={restData.acf.cta_to_about.url}>{restData.acf.cta_to_about.title}</a>
         </section>
         </div>
+
+        <GoDownButton />
           
           {restDataProjects && <Carousel data={restDataProjects} />}
-
       </div>
       )}
     </>

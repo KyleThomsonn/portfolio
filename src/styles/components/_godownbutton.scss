@@ -1,0 +1,24 @@
+@use '../base/settings' as *;
+
+
+.btn-arrow-down {
+    display: none;
+    color: $primary-color;
+    font-size: 3rem;
+    position: absolute;
+    right: 0;
+    left: 0;
+    @media(min-width: 64em){
+        display: block;
+        animation: bounce .8s infinite alternate;
+        
+        @keyframes bounce {
+            from {
+                transform: translateY(-100px);
+            }
+            to {
+                transform: translateY(-80px);
+            }
+        }
+    }
+}
