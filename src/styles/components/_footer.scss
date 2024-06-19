@@ -3,6 +3,11 @@ footer {
     text-align: center;
     .social-icon {
         margin: 1.25rem .3125rem;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 
     @media(min-width: 64em){

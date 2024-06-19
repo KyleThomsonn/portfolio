@@ -1,0 +1,33 @@
+@use '../base/settings' as *;
+@use '../mixins/mixins';
+
+.contact-section {
+    margin: 1rem;
+    height: calc(100vh - 25rem);
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+
+    .contact-article {
+        margin: auto;
+        height: 300px;
+        padding: 1rem;
+        background-color: $background-color;
+        box-shadow: inset 0px 0px 0px 6px rgba(0,0,0,0.05);
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+
+        .social-icons {
+            
+            a {
+                @include mixins.social-icon-hover;
+                margin: .3125rem;
+            }
+            
+        }
+    }
+}

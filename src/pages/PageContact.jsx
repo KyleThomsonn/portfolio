@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { restBase } from '../utilities/Utilities'
+import { restBase } from '../utilities/Utilities';
+import { SocialIcon } from 'react-social-icons';
 
 function PageContact() {
   const restPath = restBase + 'pages/14';
@@ -29,10 +30,16 @@ function PageContact() {
   return (
     <>
     {restData.acf && (
-      <div>
-        <h3>{restData.acf.contact_title}</h3>
-        <p>{restData.acf.contact_message}</p>
-      </div>
+      <section className='contact-section'>
+        <article className='contact-article'>
+          <h3>{restData.acf.contact_title}</h3>
+          <p>{restData.acf.contact_message}</p>
+          <div className='social-icons'>
+            <SocialIcon url="mailto:kylethomsonn@gmail.com" bgColor="#554EEF" style={{width: '2rem', height: '2rem'}}/>
+            <SocialIcon url="https://www.linkedin.com/in/kyle-thomson-a067002a3/" bgColor="#554EEF" style={{width: '2rem', height: '2rem'}}/>
+          </div>
+        </article>
+      </section>
     )}
     </>
   )

@@ -6,7 +6,7 @@
     transition: background-position 0.5s ease;
     padding: 1rem;
     margin: 1rem 0;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
     color: $background-color;           
@@ -18,3 +18,11 @@
         background-color: $secondary-color;
     }
 }
+
+@mixin social-icon-hover {
+    transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
