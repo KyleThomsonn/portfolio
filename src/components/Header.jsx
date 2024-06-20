@@ -15,7 +15,7 @@ function Header() {
         <Link to="/">
           <h1>{appTitle}</h1>
         </Link>
-        <button className={!showNav ? 'btn-nav' : 'show-btn-nav'} onClick={toggleNav}>{!showNav ? 'MENU' : 'CLOSE'}</button>
+        <button className={!showNav ? 'btn-nav' : 'show-btn-nav'} onClick={toggleNav}>{!showNav ? 'Menu' : 'Close'}</button>
         <Nav handleShowHideNav={toggleNav}/>
     </header>
   )

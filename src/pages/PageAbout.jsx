@@ -3,11 +3,13 @@ import { restBase } from '../utilities/Utilities';
 import MyAccordion from '../components/Accordion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import anime from 'animejs/lib/anime.es.js';
 
 function PageAbout() {
   const restPathPage = restBase + 'pages/12?acf_format=standard';
 
   const [restDataPage, setDataPage] = useState([]);
+  const [isClicked, setIsClicked] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -26,6 +28,10 @@ function PageAbout() {
     fetchData()
 }, [restPathPage]);
 
+if (error) {
+  return <div>Error: {error.message}</div>;
+}
+
 useEffect(() => {
   AOS.init({
     duration: 1000,
@@ -35,10 +41,42 @@ useEffect(() => {
 }, []);
 
 
+const handleDesignClick = () => {
+  animateDesignSkills();
+  setIsClicked(true)
+}
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+const handleDevClick = () => {
+animateDevSkills();
+}
+
+const animateDesignSkills = () => {
+
+  anime.set('.skill-item.design', {
+    translateX: function() { return anime.random(0, 20); },
+    rotate: function() { return anime.random(0, 360); },
+  });
+};
+
+const resetAnimeProperties = () => {
+  anime.set('.skill-item.design', {
+    translateX: 0,
+    rotate: 0,
+  });
+}
+
+const animateDevSkills = () => {
+
+  anime({
+    targets: '.skill-item.dev',
+    scale: [
+      {value: .1, easing: 'easeOutSine', duration: 700},
+      {value: 1, easing: 'easeInOutQuad', duration: 1400}
+    ],
+    delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
+  });
+};
+
 
     return (
       <>
@@ -61,16 +99,25 @@ useEffect(() => {
             <h3>{restDataPage.acf.design_skills_title}</h3>
             <ul>
               {restDataPage.acf.design_skills_list.map((skill, index) => (
-                <li key={index} className='skill-item'>
+                <li key={index} className='skill-item design' onMouseDown={handleDesignClick}>
                   {skill}
                 </li>
               ))}
             </ul>
+            
+            {isClicked && 
+            <button onMouseDown={() => {
+              resetAnimeProperties();
+              setIsClicked(false);
+            }}>
+              Reset
+            </button>
+            } 
 
             <h3>{restDataPage.acf.development_skills_title}</h3>
             <ul>
               {restDataPage.acf.development_skills_list.map((skill, index) => (
-                <li key={index} className='skill-item'>
+                <li key={index} className='skill-item dev' onMouseDown={handleDevClick}>
                   {skill}
                 </li>
               ))}
