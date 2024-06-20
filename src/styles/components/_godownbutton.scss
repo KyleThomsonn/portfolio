@@ -8,6 +8,7 @@
     position: absolute;
     right: 0;
     left: 0;
+    cursor: pointer;
     @media(min-width: 64em){
         display: block;
         animation: bounce .8s infinite alternate;

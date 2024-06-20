@@ -61,7 +61,7 @@ useEffect(() => {
             <h3>{restDataPage.acf.design_skills_title}</h3>
             <ul>
               {restDataPage.acf.design_skills_list.map((skill, index) => (
-                <li key={index}>
+                <li key={index} className='skill-item'>
                   {skill}
                 </li>
               ))}
@@ -70,7 +70,7 @@ useEffect(() => {
             <h3>{restDataPage.acf.development_skills_title}</h3>
             <ul>
               {restDataPage.acf.development_skills_list.map((skill, index) => (
-                <li key={index}>
+                <li key={index} className='skill-item'>
                   {skill}
                 </li>
               ))}

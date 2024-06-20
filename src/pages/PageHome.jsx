@@ -52,12 +52,13 @@ useEffect(() => {
       <div>
         <div className='home-content-wrapper'>
 
-        <section className='home-intro'>
-          <h2 data-aos="fade-up">{restData.acf.who_i_am}</h2>
-          <h2 data-aos="fade-right" data-aos-delay="300" className='specialty'>{restData.acf.specialty}</h2>
-          <p data-aos="fade-left" data-aos-delay="400">{restData.acf.what_i_do}</p>
-          <a href={restData.acf.cta_to_about.url}>{restData.acf.cta_to_about.title}</a>
-        </section>
+          <section className='home-intro'>
+            <h2 data-aos="fade-up">{restData.acf.who_i_am}</h2>
+            <h2 data-aos="fade-right" data-aos-delay="300" className='specialty'>{restData.acf.specialty}</h2>
+            <p data-aos="fade-left" data-aos-delay="400">{restData.acf.what_i_do}</p>
+            <a href={restData.acf.cta_to_about.url}>{restData.acf.cta_to_about.title}</a>
+          </section>
+        
         </div>
 
         <GoDownButton />

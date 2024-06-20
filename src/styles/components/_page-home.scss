@@ -47,7 +47,7 @@
             }
         }
             a{
-                @include mixins.custom-button;         
+            @include mixins.custom-button;         
 
             &:hover{
                 background-position: 100% 0;
