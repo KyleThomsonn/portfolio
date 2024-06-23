@@ -1,7 +1,7 @@
 import Nav from './Nav';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-import { appTitle } from "../global/global"
+import { appTitle } from "../global/global";
 
 function Header() {
 
@@ -9,7 +9,8 @@ function Header() {
 
   const toggleNav = () => {
     setShowNav(!showNav);
-}
+  }
+
   return (
     <header className={showNav ? 'show' : ''}>
         <Link to="/">

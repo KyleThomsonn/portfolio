@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512"><svg id="SvgjsSvg1000" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #554eef;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fa4b4c;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="188.5" y="64.1" width="281.7" height="115" rx="55.2" ry="55.2" transform="translate(10.5 268.5) rotate(-45)"></rect>
+  <rect class="cls-2" x="270" y="254.1" width="115" height="278.9" rx="57.5" ry="57.5" transform="translate(-182.4 346.8) rotate(-45)"></rect>
+  <rect class="cls-1" x="65.2" y="278.1" width="115" height="230" rx="57.5" ry="57.5"></rect>
+  <rect class="cls-2" x="65.2" y="3" width="115" height="236" rx="57.5" ry="57.5"></rect>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+</style></svg>

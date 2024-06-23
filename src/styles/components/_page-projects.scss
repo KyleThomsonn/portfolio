@@ -3,7 +3,7 @@
 
 .projects-wrapper{
     padding: 1rem;
-    max-width: 1920px;
+    max-width: 100rem;
     margin: 0 auto;
 
     @media(min-width: 90em){
@@ -54,6 +54,14 @@
             flex-direction: row;
             align-items: flex-end;
             max-width: 100%;
+
+            img {
+                max-width: 25rem;
+
+                @media(min-width: 90rem) {
+                    max-width: 30rem;
+                }
+            }
         }
 
         h2 {
