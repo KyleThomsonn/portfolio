@@ -4,6 +4,7 @@ import MyAccordion from '../components/Accordion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import anime from 'animejs/lib/anime.es.js';
+import Loading from '../components/Loading';
 
 function PageAbout() {
   const restPathPage = restBase + 'pages/12?acf_format=standard';
@@ -11,6 +12,7 @@ function PageAbout() {
   const [restDataPage, setDataPage] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
   const [error, setError] = useState(null);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,9 +22,16 @@ function PageAbout() {
           throw new Error('Failed to fetch data');
         }
         const restDataPage = await response_page.json();
+
         setDataPage(restDataPage);
+
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+
       } catch (error) {
         setError(error);
+        setLoading(false);
       }
     }
     fetchData()
@@ -80,6 +89,10 @@ const animateDevSkills = () => {
 
     return (
       <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+      <div>
       {restDataPage.acf &&  (
         <div className='about-wrapper'>
           <div data-aos="fade-up" className='img-wrapper'>
@@ -131,7 +144,9 @@ const animateDevSkills = () => {
         </div>
         </div>
         )}
-      </>
+    </div>
+      )}
+    </>
     )
 }
 

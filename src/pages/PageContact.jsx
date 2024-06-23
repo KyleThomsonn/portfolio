@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities';
 import { SocialIcon } from 'react-social-icons';
+import Loading from '../components/Loading';
 
 function PageContact() {
   const restPath = restBase + 'pages/14';
 
   const [restData, setData] = useState([]);
   const [error, setError] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,9 +19,16 @@ function PageContact() {
           throw new Error('Failed to fetch data');
         }
         const data = await response.json();
+
         setData(data);
+
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+
       } catch (error) {
         setError(error);
+        setLoading(false);
       }
     }
     fetchData()
@@ -29,6 +39,10 @@ function PageContact() {
   }
   return (
     <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+    <div>
     {restData.acf && (
       <section className='contact-section'>
         <article className='contact-article'>
@@ -40,6 +54,8 @@ function PageContact() {
           </div>
         </article>
       </section>
+    )}
+    </div>
     )}
     </>
   )
