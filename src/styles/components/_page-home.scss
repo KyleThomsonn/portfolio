@@ -2,7 +2,6 @@
 @use '../mixins/mixins';
 
 .home-content-wrapper{
-    
     @media(min-width: 64em){
         display: flex;
         align-items: center;
@@ -48,13 +47,6 @@
         }
             a{
             @include mixins.custom-button;         
-
-            &:hover{
-                background-position: 100% 0;
-            }
-            &:active{
-                background-color: $secondary-color;
-            }
         }
     }
 

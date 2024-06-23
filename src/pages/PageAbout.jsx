@@ -92,7 +92,7 @@ const animateDevSkills = () => {
       {isLoading ? (
         <Loading />
       ) : (
-      <div>
+      <div className='page-container'>
       {restDataPage.acf &&  (
         <div className='about-wrapper'>
           <div data-aos="fade-up" className='img-wrapper'>
@@ -119,7 +119,7 @@ const animateDevSkills = () => {
             </ul>
             
             {isClicked && 
-            <button onMouseDown={() => {
+            <button className='reset-btn' onMouseDown={() => {
               resetAnimeProperties();
               setIsClicked(false);
             }}>

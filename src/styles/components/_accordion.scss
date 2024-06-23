@@ -12,8 +12,9 @@
 
         .accordion-title {
             color: $primary-color;
+            background-color: #FFF;
             font-weight: bold;
-            font-size: 2rem;
+            font-size: 1.5rem;
             padding: 0.3rem 0.5rem;
             display: flex;
             justify-content: space-between;
@@ -31,15 +32,17 @@
             ul {
                 padding: 0;
                 text-align: center;
+                background-color: $primary-color;
 
                 li {
-                    border-top: 2px solid $primary-color;
+                    border-top: 2px solid #FFF;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     padding: 1rem;
 
                     h3 {
+                        color: #FFF;
                         margin: 0;
                     }
                 }
