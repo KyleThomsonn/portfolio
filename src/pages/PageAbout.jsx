@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import anime from 'animejs/lib/anime.es.js';
 import Loading from '../components/Loading';
+import { Link } from 'react-router-dom';
 
 function PageAbout() {
   const restPathPage = restBase + 'pages/12?acf_format=standard';
@@ -92,23 +93,24 @@ const animateDevSkills = () => {
       {isLoading ? (
         <Loading />
       ) : (
+        <main>
       <div className='page-container'>
       {restDataPage.acf &&  (
-        <div className='about-wrapper'>
-          <div data-aos="fade-up" className='img-wrapper'>
+        <div className='about-wrapper' data-aos="fade-up">
+          <div className='img-wrapper'>
           <img className='portrait' src={restDataPage.acf.self_image.url} alt={restDataPage.acf.self_image.alt} />
           </div>
           <div className='about-text-wrapper'>
-            <section data-aos="fade-up" data-aos-delay="200" className='about-intro'>
+            <section className='about-intro'>
               <h2>{restDataPage.acf.about_title}</h2>
               <p>{restDataPage.acf.about_me_section}</p>
             </section>
 
-            <section data-aos="fade-up" data-aos-delay="300" className='about-hobbies'> 
+            <section className='about-hobbies'> 
               <MyAccordion title={restDataPage.acf.hobbies_title}   data={restDataPage.acf.hobbies} />
             </section>
 
-          <section data-aos="fade-up" data-aos-delay="400" className='about-skills'>
+          <section className='about-skills'>
             <h3>{restDataPage.acf.design_skills_title}</h3>
             <ul>
               {restDataPage.acf.design_skills_list.map((skill, index) => (
@@ -138,13 +140,14 @@ const animateDevSkills = () => {
             </section>
             {restDataPage.acf.cta && (
             <div className='about-projects-btn'>
-              <a href={restDataPage.acf.cta.url}>{restDataPage.acf.cta.title}</a>
+              <Link to={restDataPage.acf.cta.url}>{restDataPage.acf.cta.title}</Link>
             </div>
               )}
         </div>
         </div>
         )}
     </div>
+    </main>
       )}
     </>
     )

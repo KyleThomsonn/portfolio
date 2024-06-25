@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 function Carousel( { data } ) {
   const settings = {
@@ -26,13 +27,16 @@ function Carousel( { data } ) {
         <Slider {...settings}>
             {data.map((project, index) => (
               <article key={index} className="project-card">
-                <a href="">
+                <Link to="">
                   <img src={project.acf.project_image.url} alt={project.acf.project_image.alt}></img>
                   <h3>{project.acf.project_title}</h3>
-                </a>
+                </Link>
               </article>
             ))}
         </Slider>
+        </div>
+        <div className="all-projects-btn">
+        <Link to="/projects">See All Projects</Link>
         </div>
     </section>
   );

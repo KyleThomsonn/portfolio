@@ -42,7 +42,7 @@ function PageContact() {
       {isLoading ? (
         <Loading />
       ) : (
-    <div>
+    <main>
     {restData.acf && (
       <section className='contact-section'>
         <article className='contact-article'>
@@ -55,7 +55,7 @@ function PageContact() {
         </article>
       </section>
     )}
-    </div>
+    </main>
     )}
     </>
   )

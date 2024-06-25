@@ -43,7 +43,7 @@ function PageProjects() {
   }
 
   return (
-    <>
+    <main>
       {isLoading ? (
         <Loading />
       ) : (
@@ -54,7 +54,7 @@ function PageProjects() {
       ))}
       </div>
       )}
-    </>
+    </main>
 );
 
 }

@@ -1,14 +1,18 @@
 @use '../base/settings' as *;
+@use '../mixins/mixins';
 
 .home-works-section{
-    max-width: 100rem;
+    max-width: 80%;
     margin: 0 auto;
+
     .home-works-title {
     text-align: center;
+    margin: 0 auto;
     font-size: 2rem;
     margin-bottom: 3rem;
 
     @media(min-width: 64em){
+        max-width: 90%;
         font-size: 3rem;
         }
     }
@@ -21,6 +25,14 @@
 
     }
 
+        .slick-arrow.slick-prev::before {
+            color: $primary-color;
+        }
+
+        .slick-arrow.slick-next::before {
+            color: $primary-color;
+        }
+
         .slick-dots {
             position: static;
         
@@ -32,6 +44,15 @@
             font-size: 12px;
             color: $primary-color;
             
+        }
+    }
+
+    .all-projects-btn {
+        text-align: center;
+        margin: 3rem;
+
+        a {
+        @include mixins.custom-button;
         }
     }
 }

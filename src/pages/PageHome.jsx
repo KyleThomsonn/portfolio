@@ -6,6 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import GoDownButton from '../components/GoDownButton';
 import Loading from '../components/Loading';
+import { Link } from "react-router-dom";
 
 function PageHome() {
     const restPath = restBase + 'pages/9';
@@ -55,11 +56,11 @@ useEffect(() => {
   }
   
   return (
-    <>
+    <main>
      {isLoading ? (
         <Loading />
       ) : (
-      <div>
+      <>
     {restData.acf && (
       <div>
         <div className='home-content-wrapper'>
@@ -78,9 +79,9 @@ useEffect(() => {
           {restDataProjects && <Carousel data={restDataProjects} />}
       </div>
       )}
-      </div>
+      </>
       )}
-    </>
+    </main>
   )
 }
 

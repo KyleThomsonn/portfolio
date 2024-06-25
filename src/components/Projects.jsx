@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 function Projects({ project }) {
 
@@ -26,7 +27,7 @@ function Projects({ project }) {
                 ))}
               </ul>
               <div className='projects-more-info'>
-                <a href={project.acf.more_info.url}>{project.acf.more_info.title}</a>
+                <Link to={project.acf.more_info.url}>{project.acf.more_info.title}</Link>
               </div>
             </div>
       </article>

@@ -14,6 +14,7 @@
     border-radius: .625rem;
 
     @media(min-width: 65em){
+        margin-top: 4rem;
         display: flex;
         max-width: 81.25rem;
         justify-content: space-around;
