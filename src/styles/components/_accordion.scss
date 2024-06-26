@@ -4,21 +4,23 @@
     padding: 1rem 0;
 
     .hobbies-accordion {
-        cursor: pointer;
         border: 3px solid $primary-color;
         border-radius: 10px;
         max-width: 31.25rem;
         margin: 0 auto;
 
         .accordion-title {
-            color: $primary-color;
-            background-color: #FFF;
+            color: $background-color;
+            background-color: $primary-color;
             font-weight: bold;
             font-size: 1.5rem;
             padding: 0.3rem 0.5rem;
             display: flex;
             justify-content: space-between;
 
+            h3 {
+                color: #FFF;
+            }
             span {
                 font-size: 1.5rem;
             }
@@ -32,17 +34,15 @@
             ul {
                 padding: 0;
                 text-align: center;
-                background-color: $primary-color;
 
                 li {
-                    border-top: 2px solid #FFF;
+                    border-top: 2px solid $primary-color;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     padding: 1rem;
 
                     h3 {
-                        color: #FFF;
                         margin: 0;
                     }
                 }
@@ -51,6 +51,7 @@
 
         &.open {
             .accordion-item-panel {
+                margin: 0;
                 max-height: 31.25rem;
             }
         }
