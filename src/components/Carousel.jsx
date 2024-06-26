@@ -27,7 +27,7 @@ function Carousel( { data } ) {
         <Slider {...settings}>
             {data.map((project, index) => (
               <article key={index} className="project-card">
-                <Link to="">
+                <Link to={`/${project.slug}`}>
                   <img src={project.acf.project_image.url} alt={project.acf.project_image.alt}></img>
                   <h3>{project.acf.project_title}</h3>
                 </Link>

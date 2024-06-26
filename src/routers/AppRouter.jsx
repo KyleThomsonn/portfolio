@@ -21,7 +21,7 @@ function AppRouter() {
             <Route path="/about" element={<PageAbout />} />
             <Route path="/contact" element={<PageContact />} />
             <Route path="/projects" element={<PageProjects />} />
-            <Route path="/project" element={<PageSingleProject />} />
+            <Route path="/:slug" element={<PageSingleProject />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         <Footer />

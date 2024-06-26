@@ -1,4 +1,3 @@
-
 import { GoChevronDown } from "react-icons/go";
 
 const GoDownButton = () => {
@@ -8,7 +7,9 @@ const GoDownButton = () => {
         const section = document.getElementById('home-works-section');
 
 
-        window.scrollTo({ top: section.offsetTop, behavior: 'smooth' });
+        if (section) {
+            window.scrollTo({ top: section.offsetTop, behavior: 'smooth' });
+        }
     };
 
     return (
