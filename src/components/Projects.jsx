@@ -20,14 +20,14 @@ function Projects({ project }) {
         </div>
           <div className='projects-info-wrapper'>
             <h2>{project.acf.project_title}</h2>
-              <p>{project.acf.project_description}</p>
+              <p>{project.acf.project_description.slice(0, 150)}...</p>
               <ul>
                 {project.acf.software_used.map((software, index) => (
                   <li key={index}>{software}</li>
                 ))}
               </ul>
               <div className='projects-more-info'>
-                <Link to={project.acf.more_info.url}>{project.acf.more_info.title}</Link>
+                <Link to={`/${project.slug}`}>{project.acf.more_info.title}</Link>
               </div>
             </div>
       </article>

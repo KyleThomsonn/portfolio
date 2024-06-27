@@ -3,10 +3,23 @@
 
 .single-project {
     padding: 1rem;
+    max-width: 81.25rem;
+    margin: 0 auto;
 
-    @media(min-width: 90em){
+    @media(min-width: 65em){
         font-size: 1.2rem;
     }
+
+        .mockups-img {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        h2 {
+            padding: 1rem 0 0;
+            text-align: center;
+            
+        }
 
     .software-list {
         display: flex;
@@ -44,6 +57,29 @@
             svg {
                 height: 1.5rem;
                 width: auto;
+            }
+        }
+    }
+
+    .project-details {
+        padding: 1rem;
+        .react-tabs {
+            ul{
+                margin: 1rem 0;
+                text-align: center;
+                li {
+                    cursor: none;
+                    font-weight: 600;
+                    color: $primary-color;
+                    background-color: #FFF;
+                    border: 1px solid $primary-color;
+                    border-radius: .3125rem .3125rem 0 0;
+                    margin: 0 .2rem;
+                }
+            }
+            .react-tabs__tab--selected {
+                color: #FFF;
+                background-color: $primary-color
             }
         }
     }
