@@ -55,19 +55,14 @@
             padding: 0;
             .skill-item{
                 display: flex;
-                color: $primary-color;
-                border: 3px solid $primary-color;
-                font-weight: bold;
-                text-align: center;
-                width: 6rem;
-                padding: 1rem;
+                padding: .5rem;
                 margin: .5rem;
-                border-radius: 10px;
                 align-items: center;
                 justify-content: center;
 
-                @media(min-width: 23.125em){
-                    width: 7.5rem;
+                svg {
+                    height: 3.5rem;
+                    width: auto;
                 }
             }
         }
@@ -81,6 +76,7 @@
 
             &:hover {
                 background-color: $primary-color;
+                transition: 0.3s;
             }
         }
     }

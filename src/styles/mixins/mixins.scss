@@ -26,3 +26,13 @@
             transform: scale(1.2);
         }
     }
+
+@mixin softwares-list {
+    display: flex;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    font-weight: bold;
+    padding: .5rem;
+    margin: .2rem;
+    border-radius: 10px;
+}

@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import anime from 'animejs/lib/anime.es.js';
 import Loading from '../components/Loading';
 import { Link } from 'react-router-dom';
+import StackIcon from 'tech-stack-icons';
 
 function PageAbout() {
   const restPathPage = restBase + 'pages/12?acf_format=standard';
@@ -115,7 +116,7 @@ const animateDevSkills = () => {
             <ul>
               {restDataPage.acf.design_skills_list.map((skill, index) => (
                 <li key={index} className='skill-item design' onMouseDown={handleDesignClick}>
-                  {skill}
+                  <StackIcon name={`${skill}`} />
                 </li>
               ))}
             </ul>
@@ -133,14 +134,14 @@ const animateDevSkills = () => {
             <ul>
               {restDataPage.acf.development_skills_list.map((skill, index) => (
                 <li key={index} className='skill-item dev' onMouseDown={handleDevClick}>
-                  {skill}
+                  <StackIcon name={`${skill}`} />
                 </li>
               ))}
             </ul>
             </section>
             {restDataPage.acf.cta && (
             <div className='about-projects-btn'>
-              <Link to={restDataPage.acf.cta.url}>{restDataPage.acf.cta.title}</Link>
+              <Link to="/projects">{restDataPage.acf.cta.title}</Link>
             </div>
               )}
         </div>

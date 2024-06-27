@@ -1,0 +1,50 @@
+@use '../mixins/mixins';
+@use '../base/settings' as *;
+
+.single-project {
+    padding: 1rem;
+
+    @media(min-width: 90em){
+        font-size: 1.2rem;
+    }
+
+    .software-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        li {
+            @include mixins.softwares-list;
+        }
+    }
+
+    .project-description {
+        margin: 1rem;
+    }
+
+    .project-live-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        a {
+            background-color: $primary-color;
+            color: #FFF;
+            padding: .5rem;
+            margin: .5rem;
+            border-radius: .625rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            &:hover {
+                background-color: $secondary-color;
+                transition: 0.3s;
+            }
+
+            svg {
+                height: 1.5rem;
+                width: auto;
+            }
+        }
+    }
+}

@@ -1,14 +1,15 @@
 import { useParams } from 'react-router-dom';
 import { restBase } from '../utilities/Utilities';
 import { useEffect, useState } from 'react';
+import SingleProject from '../components/SingleProject';
 
 function PageSingleProject() {
 
   const { slug } = useParams();
 
-  const restPathPosts = restBase + `projects?slug=${slug}`;
+  const restPathPosts = restBase + `projects?slug=${slug}&acf_format=standard`;
 
-  const [restDataPosts, setDataPosts] = useState([]);
+  const [Projects, setProjects] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
@@ -21,9 +22,9 @@ function PageSingleProject() {
           throw new Error('Failed to fetch data');
         }
 
-        const restDataPosts = await response_posts.json();
+        const Projects = await response_posts.json();
 
-        setDataPosts(restDataPosts);
+        setProjects(Projects);
 
         setTimeout(() => {
           setLoading(false);
@@ -35,13 +36,17 @@ function PageSingleProject() {
       }
     }
     fetchData()
-    }, [restDataPosts, slug]);
+    }, [Projects, slug]);
 
   if (error) {
     return <div>Error: {error.message}</div>;
   }
   return (
-    <div>PageSingleProject</div>
+    <main>
+      {Projects[0] && (
+        <SingleProject project={Projects[0]}/>
+      )}
+    </main>
   )
 }
 
