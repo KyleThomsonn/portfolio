@@ -43,44 +43,6 @@
         }
     }
 
-    .about-skills{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        ul{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 0;
-            .skill-item{
-                display: flex;
-                padding: .5rem;
-                margin: .5rem;
-                align-items: center;
-                justify-content: center;
-
-                svg {
-                    height: 3.5rem;
-                    width: auto;
-                }
-            }
-        }
-
-        .reset-btn {
-            background-color: $secondary-color;
-            color: #FFF;
-            padding: .5rem;
-            margin: .5rem;
-            border-radius: .625rem;
-
-            &:hover {
-                background-color: $primary-color;
-                transition: 0.3s;
-            }
-        }
-    }
-
     .about-projects-btn{
         text-align: center;
         padding: 1rem;
