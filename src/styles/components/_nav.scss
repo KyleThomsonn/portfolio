@@ -65,6 +65,26 @@
         }
     }
 
+    .nav-social-icons {
+        display: flex;
+        justify-content: flex-end;
+        
+        a {
+            transition: transform 0.3s ease-in-out;
+            
+            &:hover {
+            transform: scale(1.2);
+            }
+        }
+
+        @media(min-width: 64em){
+            > * {
+                width: 7rem !important;
+                height: 7rem !important;
+            }
+        }   
+    }
+
 }
 .show .nav{
     visibility: visible;
@@ -72,7 +92,8 @@
     transition: visibility 0s, transform 0.5s;
     transform: translateX(0);
     height: 100vh;
-    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
     position: fixed;
     padding: 1rem;
     top: 0;
