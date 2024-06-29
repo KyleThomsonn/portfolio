@@ -80,7 +80,7 @@ function PageHome() {
                   <p data-aos="fade-left" data-aos-delay="400">
                     {restData.acf.what_i_do}
                   </p>
-                  <Link to={restData.acf.cta_to_about.url}>
+                  <Link to="/about">
                     {restData.acf.cta_to_about.title}
                   </Link>
                 </section>
