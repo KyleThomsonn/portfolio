@@ -15,6 +15,7 @@ function PageAbout() {
   const [restDataPage, setDataPage] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(true);
+  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     document.title = appTitle + " | About";
@@ -54,6 +55,14 @@ function PageAbout() {
     });
   }, []);
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  }
+
   return (
     <>
       {isLoading ? (
@@ -66,8 +75,10 @@ function PageAbout() {
                 <div className="img-wrapper">
                   <img
                     className="portrait"
-                    src={restDataPage.acf.self_image.url}
-                    alt={restDataPage.acf.self_image.alt}
+                    src={!isHovered ? restDataPage.acf.self_image.url : restDataPage.acf.second_image.url}
+                    alt={!isHovered ? restDataPage.acf.self_image.alt : restDataPage.acf.second_image.alt}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
                   />
                 </div>
                 <div className="about-text-wrapper">
