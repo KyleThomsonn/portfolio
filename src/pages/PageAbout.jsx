@@ -6,6 +6,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "../utilities/Utilities";
+import { appTitle } from "../global/global";
 
 function PageAbout() {
   const restPathPage = restBase + "pages/12?acf_format=standard";
@@ -13,6 +15,10 @@ function PageAbout() {
   const [restDataPage, setDataPage] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    document.title = appTitle + " | About";
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -82,7 +88,7 @@ function PageAbout() {
                   </section>
                   {restDataPage.acf.cta && (
                     <div className="about-projects-btn">
-                      <Link to="/projects">{restDataPage.acf.cta.title}</Link>
+                      <Link onClick={scrollToTop} to="/projects">{restDataPage.acf.cta.title}</Link>
                     </div>
                   )}
                 </div>

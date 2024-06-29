@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { restBase } from "../utilities/Utilities";
 import { useEffect, useState } from "react";
 import SingleProject from "../components/SingleProject";
+import { appTitle } from "../global/global";
 
 function PageSingleProject() {
   const { slug } = useParams();
@@ -35,6 +36,13 @@ function PageSingleProject() {
     };
     fetchData();
   }, [Projects, slug]);
+
+  useEffect(() => {
+    if (Projects.length > 0) {
+      document.title = `${appTitle} | ${Projects[0].title.rendered}`;
+    }
+  }, [Projects]);
+
 
   if (error) {
     return <div>Error: {error.message}</div>;

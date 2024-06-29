@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import GoDownButton from "../components/GoDownButton";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
+import { appTitle } from "../global/global";
 
 function PageHome() {
   const restPath = restBase + "pages/9";
@@ -16,6 +17,10 @@ function PageHome() {
   const [restDataProjects, setDataProjects] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    document.title = appTitle;
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {

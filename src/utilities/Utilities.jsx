@@ -10,3 +10,11 @@ export { getYear };
 
 // get current date
 export const currentDate = Date();
+
+// Scroll to top
+
+const scrollToTop = () => {
+    window.scrollTo(0, 0)
+}
+
+export { scrollToTop };

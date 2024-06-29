@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { restBase } from "../utilities/Utilities";
 import { SocialIcon } from "react-social-icons";
 import Loading from "../components/Loading";
+import { appTitle } from "../global/global";
 
 function PageContact() {
   const restPath = restBase + "pages/14";
@@ -9,6 +10,10 @@ function PageContact() {
   const [restData, setData] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    document.title = appTitle + " | Contact";
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {

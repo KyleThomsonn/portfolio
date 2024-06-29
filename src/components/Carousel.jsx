@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "../utilities/Utilities";
 
 function Carousel({ data }) {
   const settings = {
@@ -44,7 +45,7 @@ function Carousel({ data }) {
         </Slider>
       </div>
       <div className="all-projects-btn">
-        <Link to="/projects">See All Projects</Link>
+        <Link onClick={scrollToTop} to="/projects">See All Works</Link>
       </div>
     </section>
   );

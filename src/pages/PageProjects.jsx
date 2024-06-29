@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { restBase } from "../utilities/Utilities";
 import Projects from "../components/Projects";
 import Loading from "../components/Loading";
+import { appTitle } from "../global/global";
 
 function PageProjects() {
   const restPathPosts = restBase + "projects?acf_format=standard";
@@ -11,6 +12,10 @@ function PageProjects() {
   const [restDataPage, setDataPage] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    document.title = appTitle + " | Projects";
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {

@@ -54,6 +54,10 @@
                     font-size: 6rem;
                 }
 
+                &:hover {
+                    transition: 0.3s;
+                }
+
                 &:hover, &:active{
                     color: $secondary-color;
                 }
