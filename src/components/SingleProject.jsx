@@ -50,29 +50,19 @@ function SingleProject({ project }) {
           </TabList>
 
           <TabPanel>
-            <h2>Content</h2>
+            <h2>{project.acf.project_highlights[0].highlight_title}</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate velit non dolores natus odio unde dolorem quos enim,
-              obcaecati provident similique quibusdam, sit consequuntur! Rerum,
-              odio accusantium? Distinctio ducimus sunt, cupiditate in rem
-              corrupti ratione harum excepturi non consequuntur at aliquid iste
-              ipsam nisi, necessitatibus facilis dolorem odit praesentium sint.
+              {project.acf.project_highlights[0].highlight_description}
+            </p>
+            <h2>{project.acf.project_highlights[1].highlight_title}</h2>
+            <p>
+            {project.acf.project_highlights[1].highlight_description}
             </p>
           </TabPanel>
           <TabPanel>
-            <h2>Content</h2>
+            <h2>{project.acf.project_highlights[1].highlight_title}</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi qui
-              laudantium quos aspernatur harum ullam dolorem repellendus
-              dignissimos laboriosam perferendis ipsa dolor consequuntur, eos
-              quibusdam earum magni nisi asperiores, blanditiis numquam.
-              Consequuntur provident ipsam numquam a, dolorem esse voluptate
-              reiciendis officiis, laudantium ex vitae vero quaerat vel, commodi
-              totam rem amet quasi nemo recusandae adipisci distinctio optio id
-              perspiciatis quos? Id incidunt, explicabo libero asperiores atque
-              culpa officiis. Reiciendis natus non praesentium iste illo?
-              Provident!
+            {project.acf.project_highlights[1].highlight_description}
             </p>
           </TabPanel>
         </Tabs>

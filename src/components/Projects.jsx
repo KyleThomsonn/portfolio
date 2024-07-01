@@ -24,12 +24,12 @@ function Projects({ project }) {
       </div>
       <div className="projects-info-wrapper">
         <h2>{project.acf.project_title}</h2>
-        <p>{project.acf.project_description.slice(0, 150)}...</p>
         <ul>
           {project.acf.software_used.map((software, index) => (
             <li key={index}>{software}</li>
           ))}
         </ul>
+        <p>{project.acf.project_description.slice(0, 150)}...</p>
         <div className="projects-more-info">
           <Link to={`/${project.slug}`}>{project.acf.more_info.title}</Link>
         </div>

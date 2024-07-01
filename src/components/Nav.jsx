@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
+import { scrollToTop } from "../utilities/Utilities";
 
 function Nav({ handleShowHideNav }) {
   const closeNav = () => {
@@ -10,16 +11,16 @@ function Nav({ handleShowHideNav }) {
     <nav className="nav" onClick={closeNav}>
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink onClick={scrollToTop} to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/projects">Projects</NavLink>
+          <NavLink onClick={scrollToTop} to="/projects">Projects</NavLink>
         </li>
         <li>
-          <NavLink to="/about">About</NavLink>
+          <NavLink onClick={scrollToTop} to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink onClick={scrollToTop} to="/contact">Contact</NavLink>
         </li>
       </ul>
       <div className="nav-social-icons">
@@ -29,7 +30,7 @@ function Nav({ handleShowHideNav }) {
           style={{ width: "4rem", height: "4rem" }}
         />
         <SocialIcon
-          url="https://www.linkedin.com/in/kyle-thomson-a067002a3/"
+          url="https://www.linkedin.com/in/kylethomsonn/"
           bgColor="#554EEF"
           style={{ width: "4rem", height: "4rem" }}
         />

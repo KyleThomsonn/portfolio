@@ -66,13 +66,20 @@
         }
 
         h2 {
-            padding-bottom: .5rem;
+            text-align: center;
+            @media(min-width: 64em) {
+                text-align: left;
+            }
         }
         ul{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         padding: 0;
+
+        @media(min-width: 64em) {
+            justify-content: flex-start;
+        }
         li{
             @include mixins.softwares-list;
             }
@@ -81,6 +88,7 @@
         .projects-more-info{
             text-align: center;
             padding: 1rem;
+            margin-top: .5rem;
             a {
                 @include mixins.custom-button;
                 padding: .8rem;

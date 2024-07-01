@@ -58,7 +58,7 @@ function PageContact() {
                     style={{ width: "2rem", height: "2rem" }}
                   />
                   <SocialIcon
-                    url="https://www.linkedin.com/in/kyle-thomson-a067002a3/"
+                    url="https://www.linkedin.com/in/kylethomsonn/"
                     bgColor="#554EEF"
                     style={{ width: "2rem", height: "2rem" }}
                   />
