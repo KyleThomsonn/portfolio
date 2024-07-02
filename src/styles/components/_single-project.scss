@@ -6,6 +6,12 @@
     max-width: 81.25rem;
     margin: 0 auto;
 
+    p {
+        max-width: 50rem;
+        display: flex;
+        margin: 1rem auto;
+    }
+
     @media(min-width: 65em){
         font-size: 1.2rem;
     }
@@ -31,9 +37,6 @@
         }
     }
 
-    .project-description {
-        margin: 1rem;
-    }
 
     .project-live-links {
         display: flex;
@@ -81,6 +84,14 @@
                 color: #FFF;
                 background-color: $primary-color
             }
+        }
+
+        .highlights-img {
+             @media(min-width: 43.75em) {
+                max-width: 40rem;
+                display: flex;
+                margin: 0 auto;
+             }
         }
     }
 }

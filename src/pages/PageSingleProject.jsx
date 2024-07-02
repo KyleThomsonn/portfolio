@@ -3,6 +3,8 @@ import { restBase } from "../utilities/Utilities";
 import { useEffect, useState } from "react";
 import SingleProject from "../components/SingleProject";
 import { appTitle } from "../global/global";
+import { scrollToTop } from "../utilities/Utilities";
+import { Link } from "react-router-dom"; 
 
 function PageSingleProject() {
   const { slug } = useParams();
@@ -11,7 +13,6 @@ function PageSingleProject() {
 
   const [Projects, setProjects] = useState([]);
   const [error, setError] = useState(null);
-  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,13 +26,8 @@ function PageSingleProject() {
         const Projects = await response_posts.json();
 
         setProjects(Projects);
-
-        setTimeout(() => {
-          setLoading(false);
-        }, 1000);
       } catch (error) {
         setError(error);
-        setLoading(false);
       }
     };
     fetchData();
@@ -43,11 +39,16 @@ function PageSingleProject() {
     }
   }, [Projects]);
 
-
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-  return <main>{Projects[0] && <SingleProject project={Projects[0]} />}</main>;
+  return (
+    <main>
+      {Projects[0] && <SingleProject project={Projects[0]} />} 
+      <div className="all-projects-btn">
+        <Link onClick={scrollToTop} to="/projects">See All Works</Link>
+      </div>
+    </main>);
 }
 
 export default PageSingleProject;

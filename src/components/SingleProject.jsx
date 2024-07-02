@@ -12,12 +12,13 @@ function SingleProject({ project }) {
       offset: 120,
       delay: 100,
       duration: 800,
+      once: true,
     });
   }, []);
 
   return (
-    <section className="single-project">
-      <article data-aos="fade-up" className="project-card">
+    <div className="single-project">
+      <section data-aos="fade-up" className="project-card">
         <img
           className="mockups-img"
           src={project.acf.project_image.url}
@@ -40,9 +41,9 @@ function SingleProject({ project }) {
             GitHub <FaGithub />
           </Link>
         </div>
-      </article>
+      </section>
 
-      <article data-aos="fade-up" className="project-details">
+      <section data-aos="fade-up" className="project-details">
         <Tabs>
           <TabList>
             <Tab>Highlights</Tab>
@@ -50,24 +51,35 @@ function SingleProject({ project }) {
           </TabList>
 
           <TabPanel>
-            <h2>{project.acf.project_highlights[0].highlight_title}</h2>
-            <p>
-              {project.acf.project_highlights[0].highlight_description}
-            </p>
-            <h2>{project.acf.project_highlights[1].highlight_title}</h2>
-            <p>
-            {project.acf.project_highlights[1].highlight_description}
-            </p>
+            <article>
+              <h2>{project.acf.project_highlights[0].highlight_title}</h2>
+              <p>{project.acf.project_highlights[0].highlight_description}</p>
+              {project.acf.project_highlights[0].screenshot && (
+                <img
+                  className="highlights-img"
+                  src={project.acf.project_highlights[0].screenshot.url}
+                  alt={project.acf.project_highlights[0].screenshot.alt}
+                ></img>
+              )}
+            </article>
+            <article>
+              <h2>{project.acf.project_highlights[1].highlight_title}</h2>
+              <p>{project.acf.project_highlights[1].highlight_description}</p>
+              {project.acf.project_highlights[1].screenshot && (
+                <img
+                  className="highlights-img"
+                  src={project.acf.project_highlights[1].screenshot.url}
+                  alt={project.acf.project_highlights[1].screenshot.alt}
+                ></img>
+              )}
+            </article>
           </TabPanel>
           <TabPanel>
-            <h2>{project.acf.project_highlights[1].highlight_title}</h2>
-            <p>
-            {project.acf.project_highlights[1].highlight_description}
-            </p>
+            <p>{project.acf.reflection}</p>
           </TabPanel>
         </Tabs>
-      </article>
-    </section>
+      </section>
+    </div>
   );
 }
 
