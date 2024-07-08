@@ -47,7 +47,7 @@ function PageProjects() {
   }
 
   return (
-    <main>
+    <main id="#main">
       {isLoading ? (
         <Loading />
       ) : (

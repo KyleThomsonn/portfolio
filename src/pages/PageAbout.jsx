@@ -68,7 +68,7 @@ function PageAbout() {
       {isLoading ? (
         <Loading />
       ) : (
-        <main>
+        <main id="#main">
           <div className="page-container">
             {restDataPage.acf && (
               <div className="about-wrapper" data-aos="fade-up">

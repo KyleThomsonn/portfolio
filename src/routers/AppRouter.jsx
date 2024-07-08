@@ -1,4 +1,5 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Components
 import Header from '../components/Header';
@@ -15,6 +16,7 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <div className="wrapper">
+        <Link to="#main" className='screen-reader-text'>Skip to Main</Link>
         <Header />
           <Routes>
             <Route path="/" exact element={<PageHome />} />

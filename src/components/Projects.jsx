@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "../utilities/Utilities";
 
 function Projects({ project }) {
   useEffect(() => {
@@ -31,7 +32,7 @@ function Projects({ project }) {
         </ul>
         <p>{project.acf.project_description.slice(0, 150)}...</p>
         <div className="projects-more-info">
-          <Link to={`/${project.slug}`}>{project.acf.more_info.title}</Link>
+          <Link onClick={scrollToTop}to={`/${project.slug}`}>{project.acf.more_info.title}</Link>
         </div>
       </div>
     </article>

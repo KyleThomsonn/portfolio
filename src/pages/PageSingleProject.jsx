@@ -43,7 +43,7 @@ function PageSingleProject() {
     return <div>Error: {error.message}</div>;
   }
   return (
-    <main>
+    <main id="#main">
       {Projects[0] && <SingleProject project={Projects[0]} />} 
       <div className="all-projects-btn">
         <Link onClick={scrollToTop} to="/projects">See All Works</Link>

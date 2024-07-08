@@ -6,7 +6,7 @@ function PageNotFound() {
     document.title = appTitle + " | 404 Error";
   }, [])
   return (
-    <main>
+    <main id="#main">
       <div>Page Not Found :(</div>
     </main>
   )
