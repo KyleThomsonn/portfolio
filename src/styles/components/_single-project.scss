@@ -12,6 +12,22 @@
         margin: 1rem auto;
     }
 
+    .single-project-title {
+        animation: pop 1s ease-out;
+        animation-delay: 1s;
+    }
+    @keyframes pop {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
     @media(min-width: 65em){
         font-size: 1.2rem;
     }
@@ -92,6 +108,10 @@
                 display: flex;
                 margin: 0 auto;
              }
+        }
+
+        .reflection-text {
+            padding-top: 1rem;
         }
     }
 }

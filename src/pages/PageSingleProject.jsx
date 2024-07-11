@@ -6,7 +6,6 @@ import { appTitle } from "../global/global";
 import { scrollToTop } from "../utilities/Utilities";
 import { Link } from "react-router-dom"; 
 import Loading from "../components/Loading";
-import { Helmet } from "react-helmet";
 
 function PageSingleProject() {
   const { slug } = useParams();
@@ -40,7 +39,7 @@ function PageSingleProject() {
       }
     };
     fetchData();
-  }, [Projects, slug]);
+  }, [slug]);
 
   useEffect(() => {
     if (Projects.length > 0) {

@@ -8,7 +8,7 @@ import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../utilities/Utilities";
 import { appTitle } from "../global/global";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function PageAbout() {
   const restPathPage = restBase + "pages/12?acf_format=standard";
@@ -65,6 +65,7 @@ function PageAbout() {
   }
 
   return (
+    <HelmetProvider>
     <>
 
       <Helmet>
@@ -116,6 +117,7 @@ function PageAbout() {
         </main>
       )}
     </>
+    </HelmetProvider>
   );
 }
 

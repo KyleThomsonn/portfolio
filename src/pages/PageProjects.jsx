@@ -3,7 +3,7 @@ import { restBase } from "../utilities/Utilities";
 import Projects from "../components/Projects";
 import Loading from "../components/Loading";
 import { appTitle } from "../global/global";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function PageProjects() {
   const restPathPosts = restBase + "projects?acf_format=standard";
@@ -48,6 +48,7 @@ function PageProjects() {
   }
 
   return (
+    <HelmetProvider>
     <>
 
       <Helmet>
@@ -67,6 +68,7 @@ function PageProjects() {
     </main>
       )}
   </>
+  </HelmetProvider>
   );
 }
 

@@ -3,7 +3,7 @@ import { restBase } from "../utilities/Utilities";
 import { SocialIcon } from "react-social-icons";
 import Loading from "../components/Loading";
 import { appTitle } from "../global/global";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function PageContact() {
   const restPath = restBase + "pages/14";
@@ -42,10 +42,11 @@ function PageContact() {
     return <div>Error: {error.message}</div>;
   }
   return (
+    <HelmetProvider>
     <>
 
       <Helmet>
-        <meta name="description" content={restData.acf && restData.acf.seo_meta_description} />
+        <meta name="description" content={restData.acf && restData.acf.seo_meta_descripion} />
       </Helmet>
 
       {isLoading ? (
@@ -59,12 +60,12 @@ function PageContact() {
                 <p>{restData.acf.contact_message}</p>
                 <div className="social-icons">
                   <SocialIcon
-                    url="mailto:kylethomsonn@gmail.com"
+                    url={`mailto:${restData.acf.email}`}
                     bgColor="#554EEF"
                     style={{ width: "2rem", height: "2rem" }}
                   />
                   <SocialIcon
-                    url="https://www.linkedin.com/in/kylethomsonn/"
+                    url={restData.acf.linkedin}
                     bgColor="#554EEF"
                     style={{ width: "2rem", height: "2rem" }}
                   />
@@ -75,6 +76,7 @@ function PageContact() {
         </main>
       )}
     </>
+    </HelmetProvider>
   );
 }
 

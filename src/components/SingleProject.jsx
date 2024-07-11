@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
 import AOS from "aos";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function SingleProject({ project }) {
   useEffect(() => {
@@ -18,6 +18,7 @@ function SingleProject({ project }) {
   }, []);
 
   return (
+  <HelmetProvider>
   <>
     <Helmet>
       <meta name="description" content={project.acf && project.acf.seo_meta_description} />
@@ -30,7 +31,7 @@ function SingleProject({ project }) {
           src={project.acf.project_image.url}
           alt={project.acf.project_image.alt}
         />
-        <h2>{project.acf.project_title}</h2>
+        <h2 className="single-project-title">{project.acf.project_title}</h2>
 
         <ul className="software-list">
           {project.acf.software_used.map((software, index) => (
@@ -81,12 +82,13 @@ function SingleProject({ project }) {
             </article>
           </TabPanel>
           <TabPanel>
-            <p>{project.acf.reflection}</p>
+            <p className="reflection-text">{project.acf.reflection}</p>
           </TabPanel>
         </Tabs>
       </section>
     </div>
     </>
+    </HelmetProvider>
   );
 }
 
