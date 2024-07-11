@@ -89,7 +89,7 @@
 .show .nav{
     visibility: visible;
     z-index: 9998;
-    transition: visibility 0s, transform 0.5s;
+    transition: visibility 0s, transform 0.6s;
     transform: translateX(0);
     height: 100vh;
     max-width: 120rem;
@@ -100,4 +100,35 @@
     right: 0;
     left: 0;
     background-color: $primary-color;
+
+     li {
+        animation: animate 350ms ease-in-out forwards;
+        opacity: 0;
+        transform: translateX(-2em);
+    }
+    @keyframes animate {
+        0% {
+            opacity: 0;
+            transform: translateX(-2em);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    li:nth-child(1) {
+        animation-delay: 400ms;
+    }
+    
+     li:nth-child(2) {
+        animation-delay: 600ms;
+    }
+    
+     li:nth-child(3) {
+        animation-delay: 800ms;
+    }
+     li:nth-child(4) {
+        animation-delay: 1s;
+    }
 }

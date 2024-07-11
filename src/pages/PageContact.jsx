@@ -3,6 +3,7 @@ import { restBase } from "../utilities/Utilities";
 import { SocialIcon } from "react-social-icons";
 import Loading from "../components/Loading";
 import { appTitle } from "../global/global";
+import { Helmet } from "react-helmet";
 
 function PageContact() {
   const restPath = restBase + "pages/14";
@@ -42,6 +43,11 @@ function PageContact() {
   }
   return (
     <>
+
+      <Helmet>
+        <meta name="description" content={restData.acf && restData.acf.seo_meta_description} />
+      </Helmet>
+
       {isLoading ? (
         <Loading />
       ) : (

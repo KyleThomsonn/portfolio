@@ -8,6 +8,7 @@ import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../utilities/Utilities";
 import { appTitle } from "../global/global";
+import { Helmet } from "react-helmet";
 
 function PageAbout() {
   const restPathPage = restBase + "pages/12?acf_format=standard";
@@ -65,9 +66,15 @@ function PageAbout() {
 
   return (
     <>
+
+      <Helmet>
+        <meta name="description" content={restDataPage.acf && restDataPage.acf.seo_meta_description} />
+      </Helmet>
+
       {isLoading ? (
         <Loading />
       ) : (
+        
         <main id="#main">
           <div className="page-container">
             {restDataPage.acf && (

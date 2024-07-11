@@ -8,6 +8,7 @@ import GoDownButton from "../components/GoDownButton";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
 import { appTitle } from "../global/global";
+import { Helmet } from "react-helmet";
 
 function PageHome() {
   const restPath = restBase + "pages/9";
@@ -60,11 +61,16 @@ function PageHome() {
   }
 
   return (
-    <main id="#main">
-      {isLoading ? (
-        <Loading />
+    <>
+
+      <Helmet>
+        <meta name="description" content={restData.acf && restData.acf.seo_meta_description} />
+      </Helmet>
+      
+    {isLoading ? (
+      <Loading />
       ) : (
-        <>
+        <main id="#main">
           {restData.acf && (
             <div>
               <div className="home-content-wrapper">
@@ -91,9 +97,9 @@ function PageHome() {
               {restDataProjects && <Carousel data={restDataProjects} />}
             </div>
           )}
-        </>
+      </main>
       )}
-    </main>
+    </>
   );
 }
 

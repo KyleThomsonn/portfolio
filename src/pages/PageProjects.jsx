@@ -3,6 +3,7 @@ import { restBase } from "../utilities/Utilities";
 import Projects from "../components/Projects";
 import Loading from "../components/Loading";
 import { appTitle } from "../global/global";
+import { Helmet } from "react-helmet";
 
 function PageProjects() {
   const restPathPosts = restBase + "projects?acf_format=standard";
@@ -47,18 +48,25 @@ function PageProjects() {
   }
 
   return (
-    <main id="#main">
+    <>
+
+      <Helmet>
+        <meta name="description" content={restDataPage.acf && restDataPage.acf.seo_meta_description} />
+      </Helmet>
+      
       {isLoading ? (
         <Loading />
       ) : (
+    <main id="#main">
         <div className="projects-wrapper">
           <h1>{restDataPage.acf && restDataPage.acf.page_title}</h1>
           {restDataPosts.map((project, id) => (
             <Projects key={id} project={project} />
           ))}
         </div>
-      )}
     </main>
+      )}
+  </>
   );
 }
 

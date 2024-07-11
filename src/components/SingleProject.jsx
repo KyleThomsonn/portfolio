@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
 import AOS from "aos";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 function SingleProject({ project }) {
   useEffect(() => {
@@ -17,6 +18,11 @@ function SingleProject({ project }) {
   }, []);
 
   return (
+  <>
+    <Helmet>
+      <meta name="description" content={project.acf && project.acf.seo_meta_description} />
+    </Helmet>
+  
     <div className="single-project">
       <section data-aos="fade-up" className="project-card">
         <img
@@ -80,6 +86,7 @@ function SingleProject({ project }) {
         </Tabs>
       </section>
     </div>
+    </>
   );
 }
 
