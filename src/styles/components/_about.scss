@@ -20,6 +20,10 @@
         justify-content: space-around;
         align-items: center;
         gap: 3rem;
+
+        .about-text-wrapper {
+            max-width: 50%;
+        }
     }
 
     .img-wrapper{
@@ -30,6 +34,7 @@
             box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         }
     }
+
     
     .about-intro{
 

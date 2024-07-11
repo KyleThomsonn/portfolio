@@ -79,7 +79,7 @@ function PageAbout() {
         <main id="#main">
           <div className="page-container">
             {restDataPage.acf && (
-              <div className="about-wrapper" data-aos="fade-up">
+              <div className="about-wrapper" data-aos="zoom-in-up">
                 <div className="img-wrapper">
                   <img
                     className="portrait"
