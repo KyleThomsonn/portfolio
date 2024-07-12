@@ -1,3 +1,4 @@
+@use '../base/settings' as *;
     .about-skills{
         display: flex;
         flex-direction: column;
@@ -14,8 +15,9 @@
                 margin: .5rem;
                 align-items: center;
                 justify-content: center;
+                flex-direction: column;
  
-                &:hover {
+                 &:hover {
                     animation: wobble 1s ease-in-out;
                 }
 
