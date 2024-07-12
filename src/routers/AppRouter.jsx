@@ -14,7 +14,7 @@ import PageSingleProject from '../pages/PageSingleProject';
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
       <div className="wrapper">
         <Link to="#main" className='screen-reader-text'>Skip to Main</Link>
         <Header />
