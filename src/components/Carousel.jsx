@@ -35,6 +35,7 @@ function Carousel({ data }) {
             <article key={index} className="project-card">
               <Link onClick={scrollToTop} to={`/${project.slug}`}>
                 <img
+                  loading="lazy"
                   src={project.acf.project_image.url}
                   alt={project.acf.project_image.alt}
                 ></img>

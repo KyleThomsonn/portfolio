@@ -12,6 +12,7 @@ const GoDownButton = () => {
   return (
     <button className="btn-arrow-down" onClick={scrollToSection}>
       <GoChevronDown />
+      <span className="arrow-down-text">Scroll down</span>
     </button>
   );
 };
