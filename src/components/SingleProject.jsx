@@ -42,7 +42,7 @@ function SingleProject({ project }) {
 
         <div className="project-live-links">
         {project.acf.project_title !== "Portfolio" &&
-          <Link to={project.acf.project_title} target="_blank">
+          <Link to={project.acf.live_site} target="_blank">
             Live Site <CiGlobe /> 
           </Link>}
           <Link to={project.acf.github} target="_blank">
