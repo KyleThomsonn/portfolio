@@ -11,16 +11,18 @@ function Footer() {
       <div className="social-icons">
         <SocialIcon
           url="https://github.com/KyleThomsonn"
+          target="_blank"
           bgColor="#554EEF"
           style={{ width: "2rem", height: "2rem" }}
         />
         <SocialIcon
-          url="https://www.linkedin.com/in/kyle-thomson-a067002a3/"
+          url="https://www.linkedin.com/in/kylethomsonn"
+          target="_blank"
           bgColor="#554EEF"
           style={{ width: "2rem", height: "2rem" }}
         />
         <SocialIcon
-          url="mailto:kylethomsonn@gmail.com"
+          url="mailto:kyle@kylescode.com"
           bgColor="#554EEF"
           style={{ width: "2rem", height: "2rem" }}
         />

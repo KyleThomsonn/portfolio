@@ -26,16 +26,18 @@ function Nav({ handleShowHideNav }) {
       <div className="nav-social-icons">
         <SocialIcon
           url="https://github.com/KyleThomsonn"
+          target="_blank"
           bgColor="#554EEF"
           style={{ width: "4rem", height: "4rem" }}
         />
         <SocialIcon
           url="https://www.linkedin.com/in/kylethomsonn/"
+          target="_blank"
           bgColor="#554EEF"
           style={{ width: "4rem", height: "4rem" }}
         />
         <SocialIcon
-          url="mailto:kylethomsonn@gmail.com"
+          url="mailto:kyle@kylescode.com"
           bgColor="#554EEF"
           style={{ width: "4rem", height: "4rem" }}
         />
