@@ -94,6 +94,11 @@
                     border: 1px solid $primary-color;
                     border-radius: .3125rem .3125rem 0 0;
                     margin: 0 .2rem;
+                    font-size: .7rem;
+
+                    @media (min-width: 24em) {
+                        font-size: 1rem;
+                    }
                 }
             }
             .react-tabs__tab--selected {
@@ -112,6 +117,10 @@
 
         .tab-p-text {
             padding-top: 1rem;
+        }
+
+        .react-tabs__tab {
+            padding: .375rem;
         }
     }
 }
