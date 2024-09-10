@@ -22,6 +22,15 @@ function SkillsList({ data }) {
           </li>
         ))}
       </ul>
+      <h3>{data.acf.learning_title}</h3>
+      <ul>
+        {data.acf.learning_list && data.acf.learning_list.map((skill, index) => (
+          <li key={index} className="skill-item dev">
+            <StackIcon name={`${skill.value}`} />
+            <p>{skill.label}</p>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
